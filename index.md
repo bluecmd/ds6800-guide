@@ -16,6 +16,12 @@ For what it is worth, IBM calls the controllers and various other things sea rel
 | Reef   | Cluster of many units    |
 | Sea    | Firmware                 |
 
+This site consists of the following parts:
+
+ * Introduction & Hardware (this page)
+ * [Administration & Operation](admin.md)
+ * [ZP Processor](zp.md)
+
 ## Chassis and Components
 
 ## Component Generations
