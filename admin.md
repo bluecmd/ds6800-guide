@@ -1,6 +1,12 @@
 # Administration
 
-Whave two controllers up and running, make sure both are connected and can ping eachother. There is as previously discussed no ethernet backplane so you need to make sure they can do that or nothing will work.
+Assuming two controllers up and running, make sure both are connected and can ping eachother. There is as previously discussed no ethernet backplane so you need to make sure they can do that or nothing will work.
+
+![DS6800 FC Architecture](images/ds6800-connection.png)*DS6800 FC connection Architecture, from IBM Redbook*
+
+The above schematic is useful to keep in mind in how data flows from FCP/FICON to disks. They arrive at the disk array either on controller 1 or controller 2 and
+can take the sub-optimal path through the other controller if they have to. It's important that you configure the array and the clients so that pathing is
+done in an optimal way.
 
 ## Model Determination
 
@@ -78,4 +84,4 @@ C1 serial number was found in only 2 files: /dapart/s1/ncipl.da,/dapart/s3/ncipl
 # Licensing
 There are some files that are interesting for licensing and product enablement. I haven't looked too much into this yet as my array is not fully up and running, but expect this section to grow. If you're so inclined, the code that handles feature activation seems to be called libSm.so and comes with debugging symbols baked in.
 
-Files that are critical to licensing that I know so far is /persist/etc/fea${CHASSIS_SERIAL}.bin, /persist/etc/nc_mnta.cfg, and persist/etc/ncipl.da. 
+Files that are critical to licensing that I know so far is /persist/etc/fea${CHASSIS_SERIAL}.bin, /persist/etc/nc_mnta.cfg, and persist/etc/ncipl.da.

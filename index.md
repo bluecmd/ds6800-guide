@@ -31,12 +31,15 @@ The controller itself has some different components and overall has a nicer look
 
 ## Expansion Controller
 
-![Expansion Controller](images/exp-controller-overview.jpg)*Expansion Controller*
+![Expansion Controller](images/exp-controller-overview.jpg)*Expansion Controller (a.k.a. Banjo)*
 
 Notice the gap in the backplane connection.
 
+The Kona controllers share a FC connection between them, which is most likely why the gap is present on Banjo controllers.
+
 > The processor cards must be able to communicate with each other when the server enclosure is powered on.
-> This means that there is no internal ethernet connection via the midplane. A peculiar design choice if you ask me.
+
+This means that there is no internal ethernet connection via the midplane. A peculiar design choice if you ask me.
 
 ## Chassis
 
@@ -55,6 +58,7 @@ List of useful part numbers
 | 22R2911 | -       | Rail kit                         |                 |
 | 23R0354 | -       | RS232 serial cable               |                 |
 | 24R1920 | -       | Common Midplane for 1750-511     |                 |
+| 23R2214 | 22R6305 | Rear Operator Panel              |                 |
 | 96P1132 | -       | Rear Operator Panel              |                 |
 | 22R3807 | -       | 736W PSU                         |                 |
 | 22R5092 | 23R0247 | Battery Pack                     |                 |
