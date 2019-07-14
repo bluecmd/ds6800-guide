@@ -1,6 +1,14 @@
 # ZP Processor
 
-The ZP processor seems to be the responsible party to read product data from the rear display panel (RDP).
+The ZP processors are using the Renesas H8S/2166 (for SES) and Renesas H8/3687 (for RDP).
+
+## RDP
+
+There is a ZP processor on the rear display panel (RDP). Not much is known about it but getting access to it should
+be possible using TTL or RS232.
+
+## SES
+The ZP SES processor seems to be the responsible party to read product data from the RDP.
 This is a processor that is present on both the main controller and the disk expansion controller board.
 
 You can connect to it using the blocked serial port using 57600 baud 8n1.
@@ -73,9 +81,53 @@ POST#:0x0047   Passed!
 POST done!
 ```
 
-It seems to have a console indicated by the `> ` symbol if you press enter. Currently there are no known commands.
+It seems to have a console indicated by the `> ` symbol if you press enter. The firmware talks about logging in, but
+there has been no known successful ways of logging in. Typing "help" lists no commands, but there are commands that are available.
 
-## Library
+## psinfo
+
+```
+> psinfo
+Power Supply 0:
+   Absent
+Power Supply 1:
+   State:                           0x04
+   PS Fault:                        FALSE
+   Current Share Fault:             FALSE
+   12v Over-Voltage:                FALSE
+   5v Over-Voltage:                 FALSE
+   12v Over-Current/Under-Voltage:  FALSE
+   5v Over-Current/Under-Voltage:   FALSE
+   Standby Fault:                   FALSE
+   Over-Temperature                 FALSE
+   Power Good:                      FALSE
+   AC Present                       TRUE
+   Power Control                    0x07
+```
+
+## sysinfo
+
+Card needs to be powered up before the model is known and temperature is reported.
+
+```
+> sysinfo
+Firmware Version:   R10-00 Dec 17 2008 05:45:08
+Hardware Version:   0x09 (Kona Pass 2.5)
+Bootstrap Version:  2
+Firmware State:     0x04 (Idle-Normal)
+Boot Cause:         0x05 (PowerOn)
+COMMS State:        0x04 (Partner Hang)
+Processor Time:     0x000831DB
+System Date/Time:   2255/55/12 00:08:57.051
+Pack ID:            0x00
+Card Location:      2 (Bottom)
+Temperature:        28 82 (C,F)
+Voltages (mV):      12270 5120 3294 2518 1225
+RDP FW Version:     0x05 0x01
+Partner:            Absent
+```
+
+# Library
 
 The main controller firmware has references to things like ZP_ReadRDPVpd which seems to be referring to this processor. Probably
 this means that all the read/writes to the RDP is handled by the ZP. 
