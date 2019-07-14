@@ -10,7 +10,8 @@ For what it is worth, IBM calls the controllers and various other things sea rel
 
 | Word   | What                     |
 |--------|--------------------------|
-| Kona   | Controller               |
+| Kona   | Main Controller          |
+| Banjo  | Expansion Controller     |
 | Shark  | Unit                     |
 | Reef   | Cluster of many units    |
 | Sea    | Firmware                 |
@@ -39,26 +40,26 @@ Notice the gap in the backplane connection.
 
 ## Chassis
 
-List of useful part numbers 
+List of useful part numbers
 
-| Part number	| FRU | What                             |
-|-------------|-----|----------------------------------|
-| 22R0077 | -       | Common Chassis                   |
-| 22R6430 | 23R0470 | Main Controller                  |
-| 22R4876 | 23R0471 | Main Controller                  |
-| 23R1274 | 45W9585 | Main Controller (522?)           |
-| 45W0119 | 23R0472 | Exp. Controller                  |
-| 23R1275 | 23R0473 | Exp. Controller (EX2?)           |
-| 22R3680 | unknown | Exp. Controller                  |
-| 22R2198 | unknown | Exp. Controller                  |
-| 22R2911 | -       | Rail kit                         |
-| 23R0354 | -       | RS232 serial cable               |
-| 24R1920 | -       | Common Midplane for 1750-511     |
-| 96P1132 | -       | Rear Operator Panel              |
-| 22R3807 | -       | 736W PSU                         |
-| 22R5092 | 23R0247 | Battery Pack                     |
-| 22R1291 | unknown | Battery Pack                     |
-| 22R5944 | 22R5944 | 300GB 10K disk                   |
+| Part number | FRU | What                             | ZP Product Data |
+|-------------|-----|----------------------------------|-----------------|
+| 22R0077 | -       | Common Chassis                   |                 |
+| 22R6430 | 23R0470 | Main Controller                  |                 |
+| 22R4876 | 23R0471 | Main Controller                  | Kona Pass 2.5   |
+| 23R1274 | 45W9585 | Main Controller (522?)           |                 |
+| 45W0119 | 23R0472 | Exp. Controller                  |                 |
+| 23R1275 | 23R0473 | Exp. Controller (EX2?)           |                 |
+| 22R3680 | unknown | Exp. Controller                  | Banjo Pass 2.5  |
+| 22R2198 | unknown | Exp. Controller                  |                 |
+| 22R2911 | -       | Rail kit                         |                 |
+| 23R0354 | -       | RS232 serial cable               |                 |
+| 24R1920 | -       | Common Midplane for 1750-511     |                 |
+| 96P1132 | -       | Rear Operator Panel              |                 |
+| 22R3807 | -       | 736W PSU                         |                 |
+| 22R5092 | 23R0247 | Battery Pack                     |                 |
+| 22R1291 | unknown | Battery Pack                     |                 |
+| 22R5944 | 22R5944 | 300GB 10K disk                   |                 |
 
 ## Filesystem and Storage
 
@@ -96,15 +97,16 @@ The CF cards that I have tested with and the result:
 | Card                                                                       | Result               |
 |----------------------------------------------------------------------------|----------------------|
 | Transcend Compact Flash Card 2GB MLC (2GB) [TS2GCF133]                     | System hang          |
-| Sandisk Extreme Compact Flash (32GB) [SDCFXSB-032G-G46]	                   | System reboot loop   |
+| Sandisk Extreme Compact Flash (32GB) [SDCFXSB-032G-G46]                    | System reboot loop   |
 | SMART Industrial Compact Flash 2GB (S-Series) [SG9CF2GSMBxx]               | System reboot loop   |
 | Swissbit 4GB Compact Flash SLC C-500 I-TEMP [SFCF4096H1AF2TO-I-QT-517-STD] | System reboot loop   |
+| Swissbit 2GB Compact Flash SLC C-300 C-TEMP [SFCF2048H1BK1TO-C-DT-553-SMA] | TBD                  |
 | SMART IBM-model Compact Flash 2GB (H-Series) [SG9CF2GHYAAIBM]              | Works                |
 | SMART Compact Flash 2GB (unknown model) [SM9FLACF2048D4]                   | Works                |
 
 When the system does not like the particular CF card you get messages that look like this:
 ```
-CF: 
+CF:
      Data:    0x7473
      Error:   0x00
      SectCnt: 0x17
@@ -121,7 +123,7 @@ CF:
 and possibly messages like these:
 
 ```
-CF: 
+CF:
      Data:    0xEBDB
      Error:   0x00
      SectCnt: 0x1B
