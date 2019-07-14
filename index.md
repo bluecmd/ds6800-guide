@@ -71,7 +71,8 @@ Note when re-assembling the controller that the plastic LED light guide rods hav
 ![The CompactFlash location, underneath the controller](images/cf-location.jpg)*The CompactFlash location, underneath the controller*
 
 Partition table:
-| Partition	| Mount        | Usage                        |
+
+| Partition	| Mount        | Usage                     |
 |-----------|--------------|------------------------------|
 | hda1 |  /var/log         | Log data (shared)            |
 | hda2 |  -                | Extended partition           |
