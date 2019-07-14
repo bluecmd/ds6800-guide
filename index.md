@@ -31,6 +31,8 @@ The controller itself has some different components and overall has a nicer look
 
 ## Expansion Controller
 
+![Expansion Controller](images/exp-controller-overview.jpg)*Expansion Controller*
+
 Notice the gap in the backplane connection.
 
 > The processor cards must be able to communicate with each other when the server enclosure is powered on.
@@ -140,8 +142,10 @@ hda: lost interrupt
 One hypothesis was that this is related to the cards are trying to use (U)DMA but the wiring of the CF socket might be only for PIO. This page has some information about why this might be a problem. However as the SG9CF2G card also fails this is probably not true as it does not support DMA from what I can tell.
 
 ## Serial Console
+
 The connector is an RJ11 with 6P4C pin configuration.
 
+![RJ11 pin color mapping](images/wiring-scheme-for-rj11.jpg)*RJ11 pin color mapping*
 
 The pinout for a converter between the RJ11 6P4C male to a DB-9 female is like this:
 
