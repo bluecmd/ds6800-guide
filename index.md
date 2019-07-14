@@ -2,8 +2,7 @@
 
 This is an knowledge base of various information about the IBM DS6800 that I hope will be useful if you ever need to repair one of these disk arrays.
 
-The intention is for this post to be updated as new information becomes apparent or outdated. Right now the post is very much in a pre-alpha state and I hope to have more of a narrative down the road, but I thought it would be fun to share the story as it develops.
-
+The intention is for this site to be updated as new information becomes apparent or outdated. Right now the site is very much in a pre-alpha state and I hope to have more of a narrative down the road, but I thought it would be fun to share the story as it develops. This site grew from an article on the [mainframe.dev](https://mainframe.dev) blog.
 
 ![The DS6800 controller, our patient](images/controller-overview-22R4876.jpg)*The DS6800 controller, our patient*
 
