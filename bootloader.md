@@ -2,6 +2,31 @@
 
 The Kona bootloader is the first thing you see when attached to the serial console. It appears remarkably non-interactive.
 
+```
+--------------------------------
+- MR1750
+--------------------------------
+
+loaded at:     00800000 008C01E8
+zimage at:     00805880 008BCCD4
+avail ram:     008C1000 08000000
+
+Linux/PPC load: console=ttyS0,38400 ro --- i --- ?
+
+Uncompressing Linux...done.
+Now booting the kernel
+Setting up ppc_ide_md
+Memory BAT mapping: BAT2=128Mb, BAT3=0Mb, residual: 0Mb
+Total memory = 128MB; using 256kB for hash table (at c01c0000)
+map_page IOBASE returned 0
+map_page INTS returned 0
+Internal registers found at 0x30040000.
+map_page BAR24 returned 0
+map_page INTREGSBASE returned 0
+Linux version 2.4.19-178 (root@mcpbuild3) (gcc version 3.2.3) #1 Tue Jun 26 20:56:22 UTC 2007
+[..]
+```
+
 You can extract a copy of it like this:
 
  * Use the r33f passphrase to get into initrd
