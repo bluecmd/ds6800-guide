@@ -22,6 +22,7 @@ This site consists of the following parts:
  * [Administration & Operation](admin.md)
  * [ZP Processor](zp.md)
  * [Rear Display Panel](rdp.md)
+ * [Kona Bootloader](bootloader.md)
 
 There are also some pre-compiled [tools](https://github.com/bluecmd/ds6800-guide/tree/master/tools) available.
 
