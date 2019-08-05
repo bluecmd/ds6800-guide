@@ -114,9 +114,11 @@ The CF cards that I have tested with and the result:
 | Sandisk Extreme Compact Flash (32GB) [SDCFXSB-032G-G46]                    | System reboot loop   |
 | SMART Industrial Compact Flash 2GB (S-Series) [SG9CF2GSMBxx]               | System reboot loop   |
 | Swissbit 4GB Compact Flash SLC C-500 I-TEMP [SFCF4096H1AF2TO-I-QT-517-STD] | System reboot loop   |
-| Swissbit 2GB Compact Flash SLC C-300 C-TEMP [SFCF2048H1BK1TO-C-DT-553-SMA] | TBD                  |
+| Swissbit 2GB Compact Flash SLC C-300 C-TEMP [SFCF2048H1BK1TO-C-DT-553-SMA] | System hang          |
 | SMART IBM-model Compact Flash 2GB (H-Series) [SG9CF2GHYAAIBM]              | Works                |
 | SMART Compact Flash 2GB (unknown model) [SM9FLACF2048D4]                   | Works                |
+| SimpleTech 2GB IBMCF2GBJ-S                                                 | Works                |
+| SimpleTech 2GB IBMCF2GBJU-S                                                | Works                |
 
 When the system does not like the particular CF card you get messages that look like this:
 ```
