@@ -117,6 +117,7 @@ The CF cards that I have tested with and the result:
 | Swissbit 2GB Compact Flash SLC C-300 C-TEMP [SFCF2048H1BK1TO-C-DT-553-SMA] | System hang          |
 | SMART IBM-model Compact Flash 2GB (H-Series) [SG9CF2GHYAAIBM]              | Works                |
 | SMART Compact Flash 2GB (unknown model) [SM9FLACF2048D4]                   | Works                |
+| SMART (unbranded) 2GB SG9CF2GHYAA-DWMS                                     | Works                |
 | SimpleTech 2GB IBMCF2GBJ-S                                                 | Works                |
 | SimpleTech 2GB IBMCF2GBJU-S                                                | Works                |
 
