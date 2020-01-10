@@ -81,6 +81,95 @@ C1 serial number was found in only 2 files: /dapart/s1/ncipl.da,/dapart/s3/ncipl
   - Concurrent code load (before quiesce)
 ```
 
+# RAID details
+
+You can use the utility `issraid` to explore the applied RAID configuration.
+
+```
+# Find out name of manager (seems to be always iss001 on kona 0, iss011 on kona 1)
+issraid -M
+# Show details on primary manager (kona 0)
+issraid -Izl iss001
+```
+
+# Factory Reset
+
+In order to factory reset, both controllers needs to be online and reach eachother. Do the following as root on the primary controller (Kona 0).
+
+```
+[Fri Jan 10 19:42:11] root@noname:~ # cmdmenu.pl 
++------------------------------------------------------------------------+
+| Text Based Menu v0.03 running on noname                                |
++------------------------------------------------------------------------+
+|  1) Clear Message Router Files                                         |
+|  2) Check and Clear Failed Controller Flag (Window Files)              |
+|  3) Display and Reset Controller Reboot Count (imlretry)               |
+|  4) Display/Modify Controller Autoboot Flag (norsStart)                |
+|  5) Delete Nonvolatile Write Cache Data (CST)                          |
+|  6) Rebuild Configuration Database (Clean PDM)                         |
+|  7) Delete Config and Return to Factory Defaults (Clear&Pave part 1/2) |
+|  8) Delete Config and Return to Factory Defaults (Clear&Pave part 2/2) |
+|  9) Force CPSS Dump                                                    |
+| 10) PE_Package (...)                                                   |
+| 11) Statesaves (...)                                                   |
+| 12) Arrowhead_Dumps (...)                                              |
+| 13) FTP a File (from current node)                                     |
+| 14) Exit                                                               |
++------------------------------------------------------------------------+
+>>> Your choice? 7
+Fri Jan 10 19:43:26 2020 Begin Procedure: Delete Config and Return to Factory Defaults (Clear&Pave part 1/2)
+Fri Jan 10 19:43:26 2020 /lic/sm/bin/clear_and_pave1.pl on kona 0
+>>> Are you sure you want to delete all data (y/n)? y
+*********************************************************************************
+Fri Jan 10 19:43:33 2020 All data will be lost, this operation is not reversible!
+*********************************************************************************
+>>> To continue type 'continue and delete all data' (without the single quotes):  continue and delete all data
+>>> Really? Are you *SURE* (y/n)? y
+>>> Please enter your full name : something-clever-here-maybe
+Fri Jan 10 19:44:00 2020 Shutting down LCPSS on kona 0
+```
+
+After a while you'll get asked to confirm a reboot. Do that, and after the reboot has finished and the console appears somewhat silent, continue the process.
+
+```
+[Fri Jan 10 19:51:10] root@noname:~ # cmdmenu.pl
++------------------------------------------------------------------------+
+| Text Based Menu v0.03 running on noname                                |
++------------------------------------------------------------------------+
+|  1) Clear Message Router Files                                         |
+|  2) Check and Clear Failed Controller Flag (Window Files)              |
+|  3) Display and Reset Controller Reboot Count (imlretry)               |
+|  4) Display/Modify Controller Autoboot Flag (norsStart)                |
+|  5) Delete Nonvolatile Write Cache Data (CST)                          |
+|  6) Rebuild Configuration Database (Clean PDM)                         |
+|  7) Delete Config and Return to Factory Defaults (Clear&Pave part 1/2) |
+|  8) Delete Config and Return to Factory Defaults (Clear&Pave part 2/2) |
+|  9) Force CPSS Dump                                                    |
+| 10) PE_Package (...)                                                   |
+| 11) Statesaves (...)                                                   |
+| 12) Arrowhead_Dumps (...)                                              |
+| 13) FTP a File (from current node)                                     |
+| 14) Exit                                                               |
++------------------------------------------------------------------------+
+>>> Your choice? 8
+Fri Jan 10 19:51:22 2020 Begin Procedure: Delete Config and Return to Factory Defaults (Clear&Pave part 2/2)
+Fri Jan 10 19:51:22 2020 /lic/sm/bin/clear_and_pave2.pl on kona 0
+>>> Are you sure you want to continue with clear and pave (y/n)? y
+***********************************************************************************************
+Fri Jan 10 19:51:29 2020 This is Part 2/2 of the procedure, make sure you already did Part 1/2.
+***********************************************************************************************
+>>> Have you already ran clear and pave part 1? y
+*********************************************************************************
+Fri Jan 10 19:51:34 2020 All data will be lost, this operation is not reversible!
+*********************************************************************************
+>>> To continue type 'continue and delete all data' (without the single quotes):  continue and delete all data
+>>> Really? Are you *SURE* (y/n)? y
+>>> Please enter your full name : something-clever-here-maybe
+Fri Jan 10 19:51:45 2020 daDestroyGD on kona 1
+```
+
+This will format all drives which will take a few hours likely.
+
 # Licensing
 There are some files that are interesting for licensing and product enablement. I haven't looked too much into this yet as my array is not fully up and running, but expect this section to grow. If you're so inclined, the code that handles feature activation seems to be called libSm.so and comes with debugging symbols baked in.
 
