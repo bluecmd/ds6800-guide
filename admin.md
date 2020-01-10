@@ -174,3 +174,30 @@ This will format all drives which will take a few hours likely.
 There are some files that are interesting for licensing and product enablement. I haven't looked too much into this yet as my array is not fully up and running, but expect this section to grow. If you're so inclined, the code that handles feature activation seems to be called libSm.so and comes with debugging symbols baked in.
 
 Files that are critical to licensing that I know so far is /persist/etc/fea${CHASSIS_SERIAL}.bin, /persist/etc/nc_mnta.cfg, and persist/etc/ncipl.da.
+
+## MTS serial number
+
+The serial number for DS6800 is shown in the SSH banner. This is an example:
+
+```
+ 
+                         IBM SystemStorage DS6000 (TM)
+ 
+        1750 Model 511            SN 13-00715         Controller Card 1 (CL0)
+ 
+ MCP 2007-06-26-203005         Code EC 5.2.2.514      Installed on: Sep 12 2010 
+ 
+ 
+                                R11f.5b090514a 
+                           SEA.rte level = 5.2.2-514
+ 
+                   Licensed Internal Code - Property of IBM. 
+ 
+                          1750 Licensed Internal Code 
+             (C) IBM Corporation 1997, 2005.  All rights reserved. 
+ 
+    US Government Users Restricted Rights - Use, duplication or disclosure 
+          Restricted by GSA ADP Schedule Contract with IBM Corporation. 
+```
+
+The MTS (a.k.a. essID) serial number here is IBM.1750-1300715. When adding to DSSM it's the `1300715` you need to enter.
