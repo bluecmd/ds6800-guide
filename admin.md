@@ -81,7 +81,7 @@ C1 serial number was found in only 2 files: /dapart/s1/ncipl.da,/dapart/s3/ncipl
   - Concurrent code load (before quiesce)
 ```
 
-# RAID details
+## RAID details
 
 You can use the utility `issraid` to explore the applied RAID configuration.
 
@@ -90,6 +90,15 @@ You can use the utility `issraid` to explore the applied RAID configuration.
 issraid -M
 # Show details on primary manager (kona 0)
 issraid -Izl iss001
+```
+
+## Setting the time
+
+If you want to manually set the time, you can do it from the shell like this:
+
+```
+date --set="20190706 11:16"
+/sbin/hwclock --set --date="$(date)"
 ```
 
 # Factory Reset
