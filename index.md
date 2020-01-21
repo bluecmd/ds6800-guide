@@ -8,13 +8,15 @@ The intention is for this site to be updated as new information becomes apparent
 
 For what it is worth, IBM calls the controllers and various other things sea related things which can be confusing. This is the translation for them:
 
-| Word   | What                     |
-|--------|--------------------------|
-| Kona   | Main Controller          |
-| Banjo  | Expansion Controller     |
-| Shark  | Unit                     |
-| Reef   | Cluster of many units    |
-| Sea    | Firmware                 |
+| Word      | What                     |
+|-----------|--------------------------|
+| Kona      | Main Controller          |
+| Banjo     | Expansion Controller     |
+| Shark     | Unit                     |
+| Reef      | Cluster of many units    |
+| Sea       | Firmware                 |
+| Arrowhead | RAID chip on Kona        |
+| Bering    | FC chip on Kona + Banjo  |
 
 This site consists of the following parts:
 
@@ -27,6 +29,28 @@ This site consists of the following parts:
 There are also some pre-compiled [tools](https://github.com/bluecmd/ds6800-guide/tree/master/tools) available.
 
 ## Chassis and Components
+
+![DS6800 controller breakdown](images/kona.png)*DS6800 controller breakdown*
+
+| Index | Component               | Subsystem | Purpose                     |
+|-------|-------------------------|-----------|-----------------------------|
+| 1a    | ??                      | ??        |                             |
+| 1b    | ??                      | ??        |                             |
+| 2a    | ??                      | ??        |                             |
+| 2b    | ??                      | ??        |                             |
+| 3a    | IBM 64P8205             | RAID      | Arrowhead RAM               |
+| 3b    | ??                      | RAID?     |                             |
+| 3c    | Marvell MV64361-BAY     | RAID      | Arrowhead CPU?              |
+| 3d    | ??                      | RAID?     |                             |
+| 4a    | ??                      | ??        |                             |
+| 4b    | ??                      | ??        |                             |
+| 5a    | PowerPC 750GX?          | CPU       | Main PowerPC CPU            |
+| 5b    | 2x 1GB DDR              | CPU       | Main system memory          |
+| 5c    | Lattice LC4512V         | ??        | Unknown CPLD                |
+| 6     | H8S/S166V               | ZP        | Card aux. processor         |
+| 7a    | Lattice ispGDX160VA     | FC        | FC lane patch panel?        |
+| 7b    | IBM Bering              | FC        | FC processor                |
+| 8     | PLX ???                 | RAID?     | PCI processor?              |
 
 ## Component Generations
 There seems to be some notable differences between some generation of components - most likely 511/522. The parts seems to be compatible, but there are some notable differences that make e.g. the 45W9585 nicer. See the photos below where the 22R4876 is compared to the 45W9585 - notice the front panel which is glued onto the earlier and is prone to come off when opening it up and otherwise handling it.
