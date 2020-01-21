@@ -15,8 +15,8 @@ For what it is worth, IBM calls the controllers and various other things sea rel
 | Shark     | Unit                     |
 | Reef      | Cluster of many units    |
 | Sea       | Firmware                 |
-| Arrowhead | RAID chip on Kona        |
-| Bering    | FC chip on Kona + Banjo  |
+| Arrowhead | Device FC adapter        |
+| Bering    | Host FC adapter          |
 
 This site consists of the following parts:
 
@@ -34,23 +34,23 @@ There are also some pre-compiled [tools](https://github.com/bluecmd/ds6800-guide
 
 | Index | Component               | Subsystem | Purpose                     |
 |-------|-------------------------|-----------|-----------------------------|
-| 1a    | ??                      | ??        |                             |
-| 1b    | ??                      | ??        |                             |
-| 2a    | ??                      | ??        |                             |
-| 2b    | ??                      | ??        |                             |
-| 3a    | IBM 64P8205             | RAID      | Arrowhead RAM               |
-| 3b    | ??                      | RAID?     |                             |
-| 3c    | Marvell MV64361-BAY     | RAID      | Arrowhead CPU?              |
-| 3d    | ??                      | RAID?     |                             |
-| 4a    | ??                      | ??        |                             |
-| 4b    | ??                      | ??        |                             |
-| 5a    | PowerPC 750GX?          | CPU       | Main PowerPC CPU            |
-| 5b    | 2x 1GB DDR              | CPU       | Main system memory          |
-| 5c    | Lattice LC4512V         | ??        | Unknown CPLD                |
+| 1a    | ??                      | Arrowhead | 2xFC PHY?                   |
+| 1b    | ??                      | Arrowhead | 2xFC PHY?                   |
+| 2a    | ??                      | Bering    | 2xFC PHY?                   |
+| 2b    | ??                      | Bering    | 2xFC PHY?                   |
+| 3a    | IBM 64P8205             | Arrowhead | IO and System RAM           |
+| 3b    | ??                      | Arrowhead | Device IO ASIC?             |
+| 3c    | Marvell MV64361-BAY     | System    | System CPU                  |
+| 3d    | ??                      | System    | System PCI-X?               |
+| 4a    | ??                      | Arrowhead | Arrowhead PCI-X?            |
+| 4b    | ??                      | Bering    | Bering PCI-X?               |
+| 5a    | ??                      | Bering    | Bering ASIC?                |
+| 5b    | 2x 1GB DDR              | Bering    | Bering HBA Memory?          |
+| 5c    | Lattice LC4512V         | Bering?   | Unknown CPLD?               |
 | 6     | H8S/S166V               | ZP        | Card aux. processor         |
 | 7a    | Lattice ispGDX160VA     | FC        | FC lane patch panel?        |
-| 7b    | IBM Bering              | FC        | FC processor                |
-| 8     | PLX ???                 | RAID?     | PCI processor?              |
+| 7b    | ??                      | FC        | FC switch?                  |
+| 8     | PLX PCI6540             | System    | PCI-X system bridge         |
 
 ## Component Generations
 There seems to be some notable differences between some generation of components - most likely 511/522. The parts seems to be compatible, but there are some notable differences that make e.g. the 45W9585 nicer. See the photos below where the 22R4876 is compared to the 45W9585 - notice the front panel which is glued onto the earlier and is prone to come off when opening it up and otherwise handling it.
