@@ -28,6 +28,12 @@ This site consists of the following parts:
 
 There are also some pre-compiled [tools](https://github.com/bluecmd/ds6800-guide/tree/master/tools) available.
 
+## System Diagram
+
+This is still work-in-progress but is a representation of the current understood system diagram of a controller.
+
+![System diagram of a controller](https://docs.google.com/drawings/d/e/2PACX-1vQ0ShjDn6eBkAemfo11AP59NzVokwsFnaplDIFQUAdkiGXzNojaEnKXB2ylOk09SPQvCBnNOeKHkTX0/pub?w=1406&h=734)*System diagram of a controller*
+
 ## Chassis and Components
 
 ![DS6800 controller breakdown](images/kona.png)*DS6800 controller breakdown*
