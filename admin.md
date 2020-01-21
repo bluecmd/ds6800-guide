@@ -103,6 +103,10 @@ date --set="20190706 11:16"
 
 # Factory Reset
 
+You can either factory reset an enclosure, or a single Kona.
+
+## Enclosure
+
 In order to factory reset, both controllers needs to be online and reach eachother. Do the following as root on the primary controller (Kona 0).
 
 ```
@@ -178,6 +182,10 @@ Fri Jan 10 19:51:45 2020 daDestroyGD on kona 1
 ```
 
 This will format all drives which will take a few hours likely.
+
+## Single Kona
+
+If you want to reset a single controller, you can use the `fresh_kona.sh` script that is available on disk. It will put the controller in a mode where it is prepared to be a replacement controller for another failed one
 
 # Licensing
 There are some files that are interesting for licensing and product enablement. I haven't looked too much into this yet as my array is not fully up and running, but expect this section to grow. If you're so inclined, the code that handles feature activation seems to be called libSm.so and comes with debugging symbols baked in.
