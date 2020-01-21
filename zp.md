@@ -9,7 +9,7 @@ be possible using TTL or RS232.
 
 ## SES
 The ZP SES processor seems to be the responsible party to read product data from the RDP.
-This is a processor that is present on both the main controller and the disk expansion controller board.
+This is a processor that is present on both the main controller and the disk expansion controller board. SES likely refers to [SCSI Enclosure Services](https://en.wikipedia.org/wiki/SCSI_Enclosure_Services). It interfaces with the SOC422 FC switch, seemingly providing enclosure control over FC.
 
 You can connect to it using the blocked serial port using 57600 baud 8n1.
 
