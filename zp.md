@@ -1,6 +1,6 @@
 # ZP Processor
 
-The ZP processors are using the Renesas H8S/2166 (for SES) and Renesas H8/3687 (for RDP).
+The ZebraPack (ZP) processors are using the Renesas H8S/2166 (for SES) and Renesas H8/3687 (for RDP). Why they are named ZebraPack is not known.
 
 ## RDP
 
