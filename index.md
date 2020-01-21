@@ -55,7 +55,7 @@ This is still work-in-progress but is a representation of the current understood
 | 5c    | Lattice LC4512V         | Bering?   | Unknown CPLD?               |
 | 6     | H8S/S166V               | ZP        | Card aux. processor         |
 | 7a    | Lattice ispGDX160VA     | FC        | FC lane patch panel?        |
-| 7b    | ??                      | FC        | FC switch?                  |
+| 7b    | Emulex InSpeed SOC 422  | FC        | FC switch                   |
 | 8     | PLX PCI6540             | System    | PCI-X system bridge         |
 
 ## Component Generations
