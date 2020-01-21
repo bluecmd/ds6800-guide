@@ -22,7 +22,7 @@ This site consists of the following parts:
 
  * Introduction & Hardware (this page)
  * [Administration & Operation](admin.md)
- * [ZP Processor](zp.md)
+ * [ZebraPack (ZP) Processor](zp.md)
  * [Rear Display Panel](rdp.md)
  * [Kona Bootloader](bootloader.md)
 
