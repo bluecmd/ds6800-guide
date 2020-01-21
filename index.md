@@ -40,8 +40,8 @@ This is still work-in-progress but is a representation of the current understood
 
 | Index | Component               | Subsystem | Purpose                     |
 |-------|-------------------------|-----------|-----------------------------|
-| 1a    | ??                      | Arrowhead | 2xFC PHY?                   |
-| 1b    | ??                      | Arrowhead | 2xFC PHY?                   |
+| 1a    | ??                      | Arrowhead | FC Loop Engine              |
+| 1b    | ??                      | Arrowhead | FC Loop Engine              |
 | 2a    | ??                      | Bering    | 2xFC PHY?                   |
 | 2b    | ??                      | Bering    | 2xFC PHY?                   |
 | 3a    | IBM 64P8205             | Arrowhead | IO and System RAM           |
